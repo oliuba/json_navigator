@@ -76,6 +76,9 @@ def main() -> None:
         upper_fields = fields(json_data)
         if upper_fields == "Error! Try again.":
             break
+        if len(json_data) < 1:
+            print("The object is empty. The navigation is finished.")
+            break
         if isinstance(json_data, dict):
             print(upper_fields)
             user_key = input("Please enter the field you would like to see \
